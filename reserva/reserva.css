@@ -1,0 +1,191 @@
+/* --- 1. VARIÁVEIS DE COR E FONTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;500;700&family=Sora:wght@400;600&display=swap');
+
+:root {
+    --bg-main: #E09F3EF3; 
+    --bg-page: #FFF2DD; 
+    --bg-card-container: #E1D7C6; /* Fundo do quadrado bege */
+    --text-primary: #780000; /* Vermelho Escuro (Títulos e Destaques) */
+    --text-secondary: #000000;
+    --text-placeholder: #B0B0B0; /* Cinza claro (Descrições) */
+    --border-color: #828282;
+}
+
+/* --- 2. ESTILOS GERAIS E CENTRALIZAÇÃO --- */
+.reservation-body {
+    background-color: var(--bg-main);
+    font-family: 'Poppins', 'Sora', Helvetica, sans-serif;
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    /* CENTRALIZA O CONTAINER BRANCO/BEGE GRANDE */
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+}
+
+.reservation-container {
+    
+    width: 1347px;
+    min-height: 1121px; 
+    background-color: var(--bg-page);
+    border-radius: 12px;
+    position: relative;
+    padding-top: 50px;
+    padding-left: 50px; 
+    box-sizing: border-box;
+    /* Usa Flexbox para centralizar o Logo e a Caixa de Reserva internamente */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* Botão Voltar */
+.back-button {
+    position: absolute;
+    top: 100px;
+    left: 86px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Logo */
+.logo-group {
+    position: relative; 
+    margin-top: 50px; 
+    width: 250px;
+    text-align: center;
+}
+.logo-image { width: 100%; height: auto; }
+
+/* --- 3. CAIXA DE RESERVA (QUADRADO BEGE CENTRAL) --- */
+.reservation-box {
+    position: relative;
+    /* Centraliza a caixa sob o logo */
+    margin: 40px auto; 
+    
+    width: 692px;
+    min-height: 484px; 
+    background-color: var(--bg-card-container); 
+    border-radius: 12px;
+    padding: 40px; 
+    box-sizing: border-box;
+    text-align: center;
+    /* Remove desbotamento */
+    filter: none; 
+    opacity: 1;
+}
+
+/* --- 4. CONTROLE DE VISIBILIDADE (Multi-Step) --- */
+.step {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px; 
+    box-sizing: border-box;
+    display: none; 
+}
+.step.active {
+    display: block !important; 
+    visibility: visible !important;
+    background-color: var(--bg-card-container); 
+    border-radius: 12px;
+    filter: none; 
+    opacity: 1;
+}
+
+/* --- 5. ESTILOS DO PASSO 1 (Botões) --- */
+.welcome-text {
+    font-family: 'Sora', Helvetica; font-weight: 400; color: var(--text-placeholder); font-size: 16px; margin-bottom: 5px; opacity: 1; filter: none;
+}
+.service-question {
+    font-family: 'Sora', Helvetica; font-weight: 600; color: var(--text-primary); font-size: 27px; margin-bottom: 30px; text-align: center; opacity: 1; filter: none;
+}
+
+#service-options-container {
+    display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 30px;
+    width: 100%;
+}
+
+.option-button {
+    width: 643px; 
+    height: 101px; 
+    background-color: white; 
+    border: 1px solid var(--border-color); 
+    border-radius: 12px; 
+    cursor: pointer; 
+    
+    /* Configuração para alinhamento (Ícone ao lado) */
+    display: flex; 
+    align-items: center; 
+    padding: 10px 20px; 
+    box-sizing: border-box; 
+    transition: background-color 0.2s, border-color 0.2s; 
+    
+    opacity: 1; 
+    filter: none; 
+}
+
+/* EFEITO HOVER */
+.option-button:hover {
+    background-color: #f5f5f5; /* Fundo levemente cinza */
+    border-color: var(--text-primary); /* Borda fica vermelha para destaque */
+}
+
+.option-icon {
+    width: 48px; 
+    height: 48px;
+    object-fit: contain;
+    margin-right: 25px; 
+    opacity: 1;
+    filter: none;
+}
+
+.option-content { 
+    display: flex; flex-direction: column; text-align: left; 
+}
+
+.option-title {
+    font-family: 'Sora', Helvetica; font-weight: 600; 
+    color: var(--text-primary); 
+    font-size: 24px; margin: 0 0 4px 0; 
+    opacity: 1; 
+    filter: none;
+}
+
+.option-description {
+    font-family: 'Sora', Helvetica; font-weight: 400; 
+    color: var(--text-placeholder); 
+    font-size: 20px; margin: 0; 
+    opacity: 1; 
+    filter: none;
+}
+
+/* --- 6. ESTILOS DOS OUTROS PASSOS (Passos 2 e 3) --- */
+#step-2 { text-align: left; }
+.step-title { font-family: 'Sora', Helvetica; font-weight: 600; color: var(--text-primary); font-size: 27px; margin-bottom: 20px; text-align: center; }
+.input-group-reserva label { font-family: 'Poppins', Helvetica; font-weight: 500; color: var(--text-primary); font-size: 14px; margin-bottom: 4px; }
+.input-group-reserva input[type="date"], .input-group-reserva select, .input-group-reserva textarea { background-color: white; border: 1px solid var(--border-color); border-radius: 8px; padding: 12px 15px; font-size: 18px; color: var(--text-primary); width: 100%; box-sizing: border-box; cursor: pointer; }
+.input-group-reserva select:required:invalid { color: var(--text-placeholder); }
+.input-group-reserva textarea { min-height: 80px; resize: vertical; }
+.policy-text { font-family: 'Poppins', Helvetica; font-weight: 400; color: var(--text-placeholder); font-size: 14px; margin-top: 10px; text-align: left; }
+
+.btn.primary { background-color: var(--bg-main); color: white; border: none; border-radius: 8px; padding: 15px 0; font-family: 'Sora', Helvetica; font-weight: 600; font-size: 20px; cursor: pointer; width: 100%; margin-top: 20px; transition: background-color 0.3s; }
+.btn.primary:hover { background-color: #c98835; }
+
+/* Confirmação (Step 3) */
+#step-3.step.active { background-color: transparent !important; display: flex !important; justify-content: center; align-items: center; padding: 0 !important; }
+.confirmation-card { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; position: relative; background-size: cover; background-position: center; padding: 40px; box-sizing: border-box; }
+.confirmation-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); z-index: 1; border-radius: 12px; }
+.confirmation-content { position: relative; z-index: 2; background-color: rgba(225, 215, 198, 0.85); padding: 30px; border-radius: 8px; text-align: center; max-width: 80%; }
+.reservation-status { font-family: 'Caprasimo', cursive; color: var(--text-primary); font-size: 30px; margin-bottom: 15px; }
+.reservation-details-text { color: #404040; margin-bottom: 20px; }
+.detail-summary p { font-size: 18px; color: var(--text-secondary); text-align: left; margin: 8px 0; }
+.detail-summary strong { color: var(--text-primary); }

@@ -47,4 +47,54 @@ button:hover, a:hover {
 
 button:active {
     transform: scale(0.98);
+
+   :root {
+  --animate-spin: spin 1s linear infinite;
+}
+
+/* Classes para usar no seu HTML ou JS: */
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+/* Definições das Animações (@keyframes) */
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+
+}
 }

@@ -1897,20 +1897,22 @@ form {
 }
 
 
-/* --- ESTILOS PARA A PÁGINA DE RESERVA (Tela de Seleção de Serviço) --- */
+/* --- VARIAVEIS DE COR E FONTES --- */
 
-/* Variáveis de Cor (Ajustadas para as cores do seu React/Tailwind) */
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;500;700&family=Sora:wght@400;600&display=swap');
+
 :root {
-    --bg-main: #E09F3EF3; /* Cor principal de fundo (externo) */
-    --bg-page: #FFF2DD; /* Fundo da página principal (interno) */
-    --bg-card-container: #E1D7C6; /* Fundo do container das opções */
-    --text-primary: #780000; /* Vermelho Escuro (Usado em alguns textos) */
-    --text-secondary: #000000; /* Texto principal do card */
-    --text-placeholder: #B0B0B0; /* Cinza claro do texto de boas-vindas */
-    --border-color: #828282; /* Cor da borda dos botões */
+    --bg-main: #E09F3EF3;
+    --bg-page: #FFF2DD;
+    --bg-card-container: #E1D7C6;
+    --text-primary: #780000;
+    --text-secondary: #000000;
+    --text-placeholder: #B0B0B0;
+    --border-color: #828282;
 }
 
-/* Estilo Geral do Body (Use esta classe na tag <body> de reserva.html) */
+/* --- ESTILOS GERAIS DE BODY E CONTAINER --- */
+
 .reservation-body {
     background-color: var(--bg-main);
     font-family: 'Poppins', 'Sora', Helvetica, sans-serif;
@@ -1922,7 +1924,6 @@ form {
     box-sizing: border-box;
 }
 
-/* Container Principal (Simula o tamanho do desktop do React) */
 .reservation-container {
     width: 1347px;
     min-height: 1121px; 
@@ -1933,7 +1934,6 @@ form {
     padding-left: 50px;
 }
 
-/* Botão Voltar */
 .back-button {
     position: absolute;
     top: 149px;
@@ -1947,7 +1947,6 @@ form {
     padding: 0;
 }
 
-/* Logo Group */
 .logo-group {
     position: absolute;
     top: 11.31%;
@@ -1959,120 +1958,4 @@ form {
 .logo-image {
     width: 100%;
     height: auto;
-}
-
-/* Container do Formulário/Opções (Caixa central) */
-.reservation-box {
-    position: absolute;
-    top: 185px;
-    left: 374px;
-    width: 692px;
-    height: 484px;
-    background-color: var(--bg-card-container);
-    border-radius: 12px;
-    padding: 40px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.welcome-text {
-    font-family: 'Sora', Helvetica;
-    font-weight: 400;
-    color: var(--text-placeholder);
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.service-question {
-    font-family: 'Sora', Helvetica;
-    font-weight: 600;
-    color: var(--text-primary); 
-    font-size: 27px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* Opções de Serviço */
-#service-options-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px; 
-    margin-top: 30px;
-}
-
-.option-button {
-    width: 643px; 
-    height: 101px;
-    background-color: white; 
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    text-align: left;
-    transition: background-color 0.2s;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.option-button:hover {
-    background-color: #f5f5f5;
-}
-
-.option-icon {
-    width: 55px;
-    height: 55px;
-    object-fit: cover;
-    margin: 0 10px;
-}
-
-.option-content {
-    margin-left: 10px;
-}
-
-.option-title {
-    font-family: 'Sora', Helvetica;
-    font-weight: 600;
-    color: var(--text-primary); 
-    font-size: 24px;
-    margin: 0 0 4px 0;
-}
-
-.option-description {
-    font-family: 'Sora', Helvetica;
-    font-weight: 400;
-    color: var(--text-placeholder);
-    font-size: 20px;
-    margin: 0;
-}
-
-/* Responsividade básica para visualização (Ajuste conforme o seu projeto) */
-@media (max-width: 768px) {
-    .reservation-container {
-        width: 100%;
-        min-height: auto;
-        padding: 20px;
-    }
-    .reservation-box {
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 100%;
-        height: auto;
-        padding: 20px;
-    }
-    .option-button {
-        width: 100%;
-        height: auto;
-        padding: 15px;
-    }
-    .logo-group {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 50%;
-        margin: 0 auto 30px;
-    }
 }
