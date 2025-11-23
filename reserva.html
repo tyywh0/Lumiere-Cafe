@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumière Café - Reserva de Mesa</title>
+    
+    <link rel="stylesheet" href="global.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <script src="reserva.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@400;500;700&family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+</head>
+<body class="reservation-body">
+
+    <div class="reservation-container">
+        
+        <button class="back-button" onclick="goBack()">
+            ← Voltar
+        </button>
+
+        <div class="logo-group">
+            <img src="https://c.animaapp.com/2rCwzqnx/img/group@4x.png" alt="Lumière Café Logo" class="logo-image">
+        </div>
+
+        <div id="reservation-steps" class="reservation-box">
+            
+            <div id="step-1" class="step active">
+                <p class="welcome-text">Bem-Vindo! Lumière Café</p>
+                <h1 class="service-question">Qual serviço você deseja utilizar?</h1>
+                
+                <div id="service-options-container">
+                    </div>
+            </div>
+
+            <div id="step-2" class="step hidden">
+                <h2 class="step-title">Faça sua reserva</h2>
+                
+                <div class="reservation-image-placeholder">
+                     
+                </div>
+
+                <form id="reservation-form">
+                    <div class="input-group-reserva">
+                        <label for="date">Dia da reserva</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="input-group-reserva">
+                        <label for="time">Horário</label>
+                        <select id="time" name="time" required>
+                            <option value="" disabled selected>Selecione um horário</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:30">19:30</option>
+                            <option value="21:00">21:00</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group-reserva">
+                        <label for="people">Pessoas</label>
+                        <select id="people" name="people" required>
+                            <option value="" disabled selected>Selecione o número de pessoas</option>
+                            <option value="1">1 Pessoa</option>
+                            <option value="2">2 Pessoas</option>
+                            <option value="4">4 Pessoas</option>
+                            <option value="6">6 Pessoas</option>
+                        </select>
+                    </div>
+
+                    <p class="policy-text">
+                        * Pedimos que chegue no máximo com 15 minutos de antecedência.
+                    </p>
+                    
+                    <button type="button" class="btn primary btn-continue" onclick="nextStep(3)">Continuar</button>
+                </form>
+            </div>
+
+            <div id="step-3" class="step hidden">
+                <div class="confirmation-card">
+                    <div class="confirmation-overlay"></div>
+                    <div class="confirmation-content">
+                        <h2 class="reservation-status">MESA RESERVADA</h2>
+                        <p class="reservation-details-text">
+                            Confirme os detalhes da sua reserva para prosseguir com a finalização.
+                        </p>
+                        <div class="detail-summary">
+                            </div>
+                        <button type="button" class="btn primary btn-confirm" onclick="finalConfirmation()">
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="reserva.js"></script>
+</body>
+</html>

@@ -1,9 +1,3 @@
-// js/login.js - VERSÃO FINAL CORRIGIDA
-
-// =======================================================
-// 1. CONFIGURAÇÃO E CONEXÃO COM SUPABASE
-// Esta parte pode ficar fora, pois não depende do DOM
-// =======================================================
 const SUPABASE_URL = 'https://isticmrrszpueieovlqq.supabase.co'; 
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzdGljbXJyc3pwdWVpZW92bHFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MzEwMjcsImV4cCI6MjA3OTQwNzAyN30.M3NNmuKrVFm-i4wQTHpVI0s-M3SCwHtB5CK93RZ2QL4';
 
@@ -17,7 +11,6 @@ const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 // =======================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 🔴 CORREÇÃO: CAPTURA DE TODOS OS ELEMENTOS DO DOM AGORA AQUI DENTRO 🔴
     const loginForm = document.getElementById('login-form');
     const cadastroForm = document.getElementById('cadastro-form');
     const loginMessage = document.getElementById('login-message');
@@ -61,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showLoginBtn?.addEventListener('click', () => toggleForm('login'));
     showCadastroBtn?.addEventListener('click', () => toggleForm('cadastro'));
 
-    // 🔴 O BOTÃO AGORA FUNCIONA: Event Listener do botão "Esqueceu a Senha" 🔴
     forgotPasswordBtn?.addEventListener('click', () => {
         const loginEmail = document.getElementById('login-email')?.value || '';
         if (loginEmail && recoveryEmailInput) {

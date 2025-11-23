@@ -1,5 +1,5 @@
-// ARQUIVO: acesso.js
-
+const SUPABASE_URL = 'https://isticmrrszpueieovlqq.supabase.co'; 
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzdGljbXJyc3pwdWVpZW92bHFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MzEwMjcsImV4cCI6MjA3OTQwNzAyN30.M3NNmuKrVFm-i4wQTHpVI0s-M3SCwHtB5CK93RZ2QL4';
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Referências aos elementos do Toggle e Formulários
